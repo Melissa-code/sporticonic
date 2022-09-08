@@ -1,0 +1,202 @@
+*, ::before, ::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Palanquin', sans-serif;
+    font-size: 18px;
+    color: white;
+    background-color: #000000;
+}
+
+h1 {
+    display: none;
+}
+
+h2 {
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 3rem;
+}
+
+h3, .card-title {
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #000000;
+}
+
+a {
+    color: #000000;
+}
+
+a:hover {
+    color: #89FC00;
+    text-decoration: none;
+}
+
+/************************************************************
+                    Header 
+************************************************************/
+
+/* Navbar */ 
+
+#main-nav {
+    background-color: #89FC00;
+    height: 15vh;
+}
+
+.logo {
+    width: 30vh;
+}
+
+.dropdown-custom {
+    background-color: #89FC00;
+}
+
+.input-navbar {
+    border: none;
+}
+
+
+/**************************************************************
+                    Main
+***************************************************************/
+
+
+/* Slogan section */ 
+
+.img-slogan {
+    background: url('public/Assets/images/photos/dumbbell-man.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 70vh;
+    text-align: center;
+    padding: 250px 0 200px 0;
+}
+
+.slogan {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2vw; 
+}
+
+.chevron-icon {
+    color: #000000;
+    max-width: 2vw;
+    max-height: auto;
+}
+
+.separator-line {
+    background-color: #E0E0DB;
+    height: 1px;
+}
+
+
+/* Statistics section  */ 
+
+.statistics-card {
+    background-color: #89FC00;
+    border: none;
+    width: 20rem;
+}
+
+.card-icons {
+    height: 15vh;
+}
+
+
+/* Courses section */ 
+
+#courses {
+    background-color: #2A2829;
+}
+
+.title-carousel {
+    color:#89FC00;
+}
+
+.control-btn {
+    width: 50px;
+    height: 50px;
+    color:white;
+    background-color: #000000;
+}
+
+
+/* Become a Partner section */ 
+
+.partner-card {
+    background-color: #89FC00;
+    border:none;
+    width: 26rem;
+
+}
+
+.btn-partner {
+    background-color: #000000;
+    width: 100px;
+}
+
+
+
+
+/***************************************************************
+                    Footer 
+****************************************************************/
+
+/* Footer  */ 
+
+.footer-custom {
+    background-color: #E0E0DB;
+    height: 15vh;
+    color: #000000;
+}
+
+
+
+/*****************************************************************
+                    Media queries 
+******************************************************************/
+
+@media screen and (min-width: 280px) and (max-width: 1200px) {
+
+    /* Main */ 
+    h2 {
+        font-size: 2rem;
+    }
+    .img-slogan {
+        display: none;
+    }
+    .card-title  {
+        font-size: 1.5rem;
+    }
+    .statistics-card, .partner-card {
+        width: 19rem;
+    }
+    .card-icons {
+        height: 12vh;
+    }
+
+    /* Footer  */ 
+    .footer-custom {
+        font-size: 16px;
+    }
+
+}
+
+@media screen and (min-width: 768px) and (max-width: 1200px) {
+
+    /* Main */ 
+    .title-carousel {
+        font-size: 1.5rem;
+    }
+  
+
+}
+  

@@ -8,6 +8,7 @@ require_once("./controllers/MainController.php");
 
 $mainController = new MainController();
 
+
 try {
     if(empty($_GET['page'])){
         $page = "home";
@@ -25,8 +26,9 @@ try {
                 break;
             }
         break;
-        default : throw new Exception("La page n'existe pas");
+        default : throw new Exception("La page n'existe pas.");
     }
+
 } catch (Exception $e){
     $mainController->errorPage($e->getMessage());
 }
