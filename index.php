@@ -4,9 +4,10 @@ session_start();
 define("URL", str_replace("index.php","",(isset($_SERVER['HTTPS'])? "https" : "http").
 "://".$_SERVER['HTTP_HOST'].$_SERVER["PHP_SELF"]));
 
-require_once("./controllers/MainController.php");
 
-$mainController = new MainController();
+require_once("./controllers/User/UserController.php");
+
+$userController = new UserController();
 
 
 try {
@@ -18,11 +19,17 @@ try {
     }
 
     switch($page){
-        case "home" : $mainController->home();
+        case "home" : $userController->home();
+        break;
+        case "loginStructure" : $userController->loginStructure();
+        break;
+        case "loginPartner" : $userController->loginPartner();
+        break;
+        case "loginBrand" : $userController->loginBrand();
         break;
         case "account" : 
             switch($url[1]){
-                case "profil": $mainController->home();
+                case "profil": $userController->home();
                 break;
             }
         break;
@@ -30,5 +37,5 @@ try {
     }
 
 } catch (Exception $e){
-    $mainController->errorPage($e->getMessage());
+    $userController->errorPage($e->getMessage());
 }

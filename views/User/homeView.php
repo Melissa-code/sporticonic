@@ -1,8 +1,9 @@
-<!-----------------------------------------------------------
+<!-------------------------------------------------------------------------------
                             Main (Home)
-------------------------------------------------------------->
+--------------------------------------------------------------------------------->
 
 <!-- Page title section --> 
+
 <section>
     <h1>Sport Iconic</h1>
 </section>
@@ -13,7 +14,7 @@
 <section id="slogan-section">
     <div class="row">
         <!-- Background image -->
-        <div class="col-12 img-slogan">
+        <article class="col-12 img-slogan">
             <h2 class="pt-5 text-white text-uppercase font-weight-bold font-italic display-3">Sport Iconic</h2>
             <!-- Slogan -->
             <div class="slogan">
@@ -21,7 +22,7 @@
             </div>
             <!-- Link to Courses section -->
             <a href="#courses"><img src="<?= URL ?>public/Assets/images/icons/chevron.png" alt="icône chevron bas" class="chevron-icon"></a>
-        </div>
+        </article>
     </div>
 </section>
 
@@ -38,7 +39,7 @@
             </div>
 
             <!-- Concept description --> 
-            <div class="col-11 mx-auto">
+            <article class="col-11 mx-auto">
                 <div class="row">
                     <div class="col-12 text-justify">
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempor elementum odio, vel viverra augue. Sed pellentesque pretium tortor, nec porta nisl. Aenean dictum ex ultricies, lacinia est at, maximus tortor. </p>
@@ -46,7 +47,7 @@
                         <p>Diam sed convallis ullamcorper, odio libero pellentesque odio, eu tristique est dui pulvinar quam. Maecenas eget augue orci. Nulla dictum urna id nulla gravida, sit amet condimentum ligula pellentesque. Ut erat purus, aliquet sed lorem ut, tristique efficitur arcu. Morbi sed consectetur nulla.</p>
                     </div>
                 </div>
-            </div>
+            </article>
 
             <!-- Concept separator line --> 
             <div class="col-11 mx-auto mt-4">
@@ -73,7 +74,7 @@
             <div class="col-12 d-flex justify-content-center">
                 <div class="row mb-5">
                     <!-- 1st card Success -->
-                    <div class="col-12 col-md-4 d-flex justify-content-center">
+                    <article class="col-12 col-md-4 d-flex justify-content-center">
                         <div class="card statistics-card mb-3">
                             <div class="d-flex justify-content-center mt-3">
                                 <img src="<?= URL ?>public/Assets/images/icons/business-success.svg" class="card-img-top card-icons" alt="icône de succès">
@@ -83,9 +84,9 @@
                                 <p class="card-text text-dark">de taux de réussite</p>
                             </div>
                         </div>
-                    </div>
+                    </article>
                     <!-- 2nd card France -->
-                    <div class="col-12 col-md-4 d-flex justify-content-center">
+                    <article class="col-12 col-md-4 d-flex justify-content-center">
                         <div class="card statistics-card mb-3">
                             <div class="d-flex justify-content-center mt-3">
                                 <img src="<?= URL ?>public/Assets/images/icons/france-flag.svg" class="card-img-top card-icons" alt="icône de la France">
@@ -95,9 +96,9 @@
                                 <p class="card-text text-dark">partout en France</p>
                             </div>
                         </div>
-                    </div>
+                    </article>
                     <!-- 3rd card World -->
-                    <div class="col-12 col-md-4 d-flex justify-content-center">
+                    <article class="col-12 col-md-4 d-flex justify-content-center">
                         <div class="card statistics-card mb-3">
                             <div class="d-flex justify-content-center mt-3">
                                 <img src="<?= URL ?>public/Assets/images/icons/globe.svg" class="card-img-top card-icons" alt="icône d'un globe" >
@@ -107,7 +108,7 @@
                                 <p class="card-text text-dark">dans le monde</p>
                             </div>
                         </div>
-                    </div>
+                    </article>
                 </div>
             </div>
 
@@ -128,7 +129,7 @@
             </div>
 
             <!-- Courses carousel --> 
-            <div class="col-12 mb-5">
+            <article class="col-12 mb-5">
                 <div id="myCarousel" class="carousel slide carousel-fade" data-ride="carousel">
                     <div class="carousel-inner carousel">
                         <!-- 1srt slide about collective courses -->
@@ -172,7 +173,7 @@
                         </button>
                     </a>
                 </div>
-            </div> 
+            </article> 
 
         </div>
     </div>
@@ -185,54 +186,56 @@
     <div class="container">
         <div class="row">
 
-    <!-- Partner title -->
-    <div class="col-12 pt-5 pb-3">
-        <h2>Devenir franchisé</h2>
-    </div>
-
-     <!--  -->
-     <div class="col-12 d-flex justify-content-center mb-5">
-        <div class="row">
-
-            <!-- 1st card new openings -->
-            <div class="col-12 col-md-6 d-flex justify-content-center">
-                <div class="card partner-card mb-3">
-                    <div class="d-flex justify-content-center mt-4">
-                        <img src="<?= URL ?>public/Assets/images/icons/gym.svg" class="card-img-top card-icons" alt="icône de succès">
-                    </div>
-                    <div class="card-body">
-                        <h3 class="card-title">Ouvertures de salles</h3>
-                        <p class="card-text text-center text-dark" >Lubersac (19), Aiserey (21), Peipin (04), Saint-Flour (15), Veynes (05), Boulogne-sur-Mer (62), Alès (30)</p>
-                        <div class="d-flex justify-content-center">
-                            <button type="button" class="btn btn-partner mt-2"><a href="#" class="card-link text-white">Découvrir</a></button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-             <!-- 2nd card Brand infos-->
-             <div class="col-12 col-md-6 d-flex justify-content-center ">
-                <div class="card partner-card mb-3">
-                    <div class="d-flex justify-content-center mt-4">
-                        <img src="<?= URL ?>public/Assets/images/icons/infos.svg" class="card-img-top card-icons" alt="icône de succès" >
-                    </div>
-                    <div class="card-body">
-                        <h3 class="card-title font-weight-bold">Plus d'infos</h3>
-                  
-                        <div class="card-text text-center">
-                            <p class="text-dark"><img src="<?= URL ?>public/Assets/images/icons/phone.svg" alt="icône téléphone" style="width:1rem" class="mr-2">06.43.65.66.87<br>
-                                <img src="<?= URL ?>public/Assets/images/icons/email.svg" alt="icône email" style="width:1.4rem" class="mr-2">infos-sporticonic@gmail.com
-                            </p>
-                        </div>
-                        <div class="d-flex justify-content-center mt-5 mt-lg-4">
-                            <button type="button" class="btn btn-partner "><a href="#" class="card-link text-white">Contact</a></button>
-                        </div>
-                    </div>
-                </div>
-
+            <!-- Partner title -->
+            <div class="col-12 pt-5 pb-3">
+                <h2>Devenir franchisé</h2>
             </div>
 
-        </div>
-    </div>
+            <!-- Partner infos -->
+            <div class="col-12 d-flex justify-content-center mb-5">
+                <div class="row">
+
+                    <!-- 1st card new openings -->
+                    <article class="col-12 col-md-6 d-flex justify-content-center">
+                        <div class="card partner-card mb-3">
+                            <div class="d-flex justify-content-center mt-4">
+                                <img src="<?= URL ?>public/Assets/images/icons/gym.svg" class="card-img-top card-icons" alt="icône de succès">
+                            </div>
+                            <div class="card-body">
+                                <h3 class="card-title">Ouvertures de salles</h3>
+                                <p class="card-text text-center text-dark" >Lubersac (19), Aiserey (21), Peipin (04), Saint-Flour (15), Veynes (05), Boulogne-sur-Mer (62), Alès (30)</p>
+                                <!-- Discover button -->
+                                <div class="d-flex justify-content-center">
+                                    <button type="button" class="btn btn-partner mt-2"><a href="#" class="card-link text-white">Découvrir</a></button>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- 2nd card Brand infos-->
+                    <article class="col-12 col-md-6 d-flex justify-content-center ">
+                        <div class="card partner-card mb-3">
+                            <div class="d-flex justify-content-center mt-4">
+                                <img src="<?= URL ?>public/Assets/images/icons/infos.svg" class="card-img-top card-icons" alt="icône de succès" >
+                            </div>
+                            <div class="card-body">
+                                <h3 class="card-title font-weight-bold">Plus d'infos</h3>
+                                <div class="card-text text-center">
+                                    <p class="text-dark">
+                                        <!-- Phone & Email icons -->
+                                        <img src="<?= URL ?>public/Assets/images/icons/phone.svg" alt="icône téléphone" style="width:1rem" class="mr-2">06.43.65.66.87<br>
+                                        <img src="<?= URL ?>public/Assets/images/icons/email.svg" alt="icône email" style="width:1.4rem" class="mr-2">infos-sporticonic@gmail.com
+                                    </p>
+                                </div>
+                                <!-- Contact button -->
+                                <div class="d-flex justify-content-center mt-5 mt-lg-4">
+                                    <button type="button" class="btn btn-partner "><a href="#" class="card-link text-white">Contact</a></button>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
 
         </div>
     </div>
