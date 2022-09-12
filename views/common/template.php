@@ -29,12 +29,19 @@
         <div class="container-fluid">
             <?php 
                 if(!empty($_SESSION['alert'])) {
-                    foreach($_SESSION['alert'] as $alert){
-                        echo "<div class='alert ". $alert['type'] ."' role='alert'>
-                            ".$alert['message']."
-                        </div>";
-                    }
-                    unset($_SESSION['alert']);
+
+                    echo "<div class='row'>";
+                        echo "<div class='col-12 d-flex justify-content-center w-75 my-3'>";
+
+                            foreach($_SESSION['alert'] as $alert){
+                                echo "<div class='alert ". $alert['type'] ."' role='alert'>
+                                    ".$alert['message']."
+                                </div>";
+                            }
+                            unset($_SESSION['alert']);
+
+                        echo "</div>";
+                    echo "</div>";
                 }
             ?>
             <?= $page_content; ?>

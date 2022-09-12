@@ -8,7 +8,7 @@ class UserController extends MainController {
      * home function 
      *
      */
-    public function home(): void {
+    public function home(): void { 
         $data_page = [
             "page_description" => "Description de la page d'accueil",
             "page_title" => "Sport Iconic",
@@ -18,19 +18,6 @@ class UserController extends MainController {
         $this->generatePage($data_page);
     }
 
-    /**
-     * login Structure function
-     *
-     */
-    public function loginStructure() :void {
-        $data_page = [
-            "page_description" => "Page de connexion de la Structure",
-            "page_title" => "Connexion de la Structure",
-            "view" => "views/User/loginStructureView.php",
-            "template" => "views/common/template.php"
-        ];
-        $this->generatePage($data_page);
-    }
 
     /**
      * login Partner function
@@ -59,7 +46,6 @@ class UserController extends MainController {
         ];
         $this->generatePage($data_page);
     }
-
 
     /**
      * error function
