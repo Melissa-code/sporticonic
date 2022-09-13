@@ -43,10 +43,11 @@ try {
         break;
         case "loginBrand" : $userController->loginBrand();
         break;
-        case "account" : 
+        case "accountStructure" :
             switch($url[1]){
-                case "profil": $userController->home();
+                case "profil": $structureController->profil();
                 break;
+                default : throw new Exception("La page n'existe pas.");
             }
         break;
         default : throw new Exception("La page n'existe pas.");

@@ -26,9 +26,11 @@
                     <a class="nav-link menu-link" href="#">Contact</a>
                 </li>
             </ul>
+            
             <!-- login links --> 
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item dropdown">
+                <?php if(empty($_SESSION['profil'])): ?>
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">Se connecter</a>
                     <div class="dropdown-menu dropdown-custom">
                         <a class="dropdown-item" href="<?= URL ?>loginBrand">La Marque</a>
@@ -37,8 +39,14 @@
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="<?= URL ?>loginStructure">Structure</a>
                     </div>
+                    <?php else: ?>
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="<?= URL ?>accountStructure/profil">Profil</a>
+                        </li>
+                    <?php endif ?>
                 </li>
             </ul>
+
         </div>
 
     </div>

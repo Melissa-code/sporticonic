@@ -15,8 +15,7 @@
     <!-- CSS Bootstrap v 4.6 -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="style.css">
-
+    <link rel="stylesheet" type="text/css" href="<?= URL ?>/style.css">
 </head>
 
 
@@ -31,7 +30,7 @@
                 if(!empty($_SESSION['alert'])) {
 
                     echo "<div class='row'>";
-                        echo "<div class='col-12 d-flex justify-content-center w-75 my-3'>";
+                        echo "<div class='col-12 d-flex justify-content-center w-75 mt-2'>";
 
                             foreach($_SESSION['alert'] as $alert){
                                 echo "<div class='alert ". $alert['type'] ."' role='alert'>
