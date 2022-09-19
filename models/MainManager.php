@@ -1,8 +1,7 @@
 <?php
-require_once("class/Model.php");
+require_once("models/class/Model.php");
 
 abstract class MainManager extends Model {
 
- 
 
 }

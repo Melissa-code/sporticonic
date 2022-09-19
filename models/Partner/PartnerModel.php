@@ -1,9 +1,8 @@
 <?php 
-require("models/MainManager.php"); 
+require("models/class/Model.php"); 
 
 
-Class PartnerModel extends MainManager {
-
+Class PartnerModel extends Model {
 
     /**
      * Get all the partners 

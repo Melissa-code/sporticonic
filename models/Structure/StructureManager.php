@@ -2,7 +2,7 @@
 require("models/MainManager.php"); 
 
 
-Class StructureModel extends MainManager {
+Class StructureManager extends MainManager {
 
 
     /**
@@ -82,7 +82,7 @@ Class StructureModel extends MainManager {
     /**
      * Get all the partner modules function
      *
-     * @param [type] $login
+     * @param [type] $id_structure
      * @return array
      */
     public function getPartnerModules($id_structure): array {
@@ -98,7 +98,7 @@ Class StructureModel extends MainManager {
     /**
      * Get all the structure modules function
      *
-     * @param [type] $login
+     * @param [type] $id_structure
      * @return array
      */
     public function getStructureModules($id_structure): array {

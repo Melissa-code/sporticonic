@@ -1,15 +1,19 @@
 <?php
 require_once("controllers/MainController.php"); 
-require_once("models/Structure/StructureModel.php"); 
+require_once("models/Structure/StructureManager.php"); 
+require_once("models/ModuleManager.php"); 
+
 
 
 class StructureController extends MainController {
 
-    private StructureModel $structureModel; 
+    private StructureManager $structureManager; 
+    private ModuleManager $moduleManager; 
 
 
     public function __construct() {
-        $this->structureModel = new StructureModel(); 
+        $this->structureManager = new StructureManager(); 
+        $this->moduleManager = new ModuleManager(); 
     }
 
 
@@ -32,8 +36,8 @@ class StructureController extends MainController {
      *
      */
     public function loginStructureValidation($login, $password): void {
-        if($this->structureModel->isCombinationValid($login, $password)) {
-            if($this->structureModel->isAccountActivated($login)){
+        if($this->structureManager->isCombinationValid($login, $password)) {
+            if($this->structureManager->isAccountActivated($login)){
                 Toolbox::addAlertMessage("Ravi de vous retrouver", Toolbox::GREEN_COLOR); 
                     $_SESSION['profil'] = [
                         'login' => $login
@@ -59,23 +63,26 @@ class StructureController extends MainController {
      */
     public function profil(): void {
 
-        $infos = $this->structureModel->getStructureInformation($_SESSION['profil']['login']);
-        $id_structure = $infos['id_structure'];
+        $structure = $this->structureManager->getStructureInformation($_SESSION['profil']['login']);
+        $id_structure = $structure['id_structure'];
+        $modules_partner = $this->structureManager->getPartnerModules($id_structure);
+        $modules_structure = $this->structureManager->getStructureModules($id_structure);
+        $modules = $this->moduleManager->getAllDb(); 
 
-        $modules_partner = $this->structureModel->getPartnerModules($id_structure);
-        $modules_structure = $this->structureModel->getStructureModules($id_structure);
-        //var_dump($partner_modules);
-        //var_dump( $structure_modules);
 
-        // TO DO 
-        $_SESSION['profil']['role'] = $infos['role_structure'];
+        /**
+         *  TO DO : send an email to the structure 
+         */
+        $_SESSION['profil']['role'] = $structure['role_structure'];
+
 
         $data_page = [
             "page_description" => "Page de profil de la Structure",
             "page_title" => "Informations et modules de la Structure",
-            "structure" => $infos,
+            "structure" => $structure,
             "modules_partner" => $modules_partner,
             "modules_structure" => $modules_structure, 
+            "modules" => $modules,
             "view" => "views/Structure/profilStructureView.php",
             "template" => "views/common/template.php"
         ];

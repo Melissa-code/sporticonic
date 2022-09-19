@@ -17,18 +17,18 @@
             <div class="row">
 
                 <!-- Structure profil title -->
-                <div class="col-12 pt-2 pb-3 profil-structure">
+                <div class="col-12 pt-2 pb-md-3 profil-structure">
                     <h2><?= $structure['name_structure'] ?></h2>
                 </div>
 
-                <!-- Structure profil  --> 
-                <div class="col-12 d-flex justify-content-center align-items-center my-5">
+                <!-- Structure profil Informations & Modules  --> 
+                <div class="col-12 d-flex justify-content-center align-items-center my-2 my-md-5">
                     <div class="row">
                         <!-- Structure Information --> 
                         <article class="col-12 col-md-6">
-                            <div class="card-container my-1">
-                                <div>
-                                    <h3 class="my-3">Informations</h3>
+                            <div class="card card-container py-1 m-1" style="width: 20rem;">
+                                <div class="card-body">
+                                    <h3 class="my-2 my-md-3">Informations</h3>
                                     <ul class="infoStructure">
                                         <li><?= $structure['description_structure'] ?></li>
                                         <li><?= $structure['address_structure'] ?></li>
@@ -39,53 +39,59 @@
                             </div>
                         </article>
 
-                         <!-- Modules Structure --> 
+                        <!-- Modules Structure --> 
                         <article class="col-12 col-md-6">
-                            <div class="card-container my-1">
-                                <h3 class="my-3">Modules</h3>
-                                <div class="d-flex">
+                            <div class="card card-container py-1 m-1" style="width: 20rem;">
+                                <div class="card-body">
+                                    <h3 class="my-2 my-md-3">Modules</h3>
                                     <ul class="infoStructure">
-                                        <?php foreach($modules_partner as $module_partner): ?>
-                                        <li><?= $module_partner['name_module'] ?></li>
+                                        <!-- Display the checked partner modules --> 
+                                        <?php foreach($modules as $module): ?>
+                                            <?php foreach($modules_partner as $module_partner): ?>
+                                                <?php if($module['name_module'] === $module_partner['name_module']) :?> 
+                                                    <li class="d-flex"><?= $module_partner['name_module'] ?>
+                                                        <!-- toggle switch checked -->
+                                                        <div class="container toggleSwitch my-1">
+                                                            <input type="checkbox" name="box" class="box" checked>
+                                                            <div class="colorLayer"></div>
+                                                            <div class="switch"></div>
+                                                        </div> 
+                                                    </li>
+                                                <?php endif ?>
+                                            <?php endforeach ?>
                                         <?php endforeach ?>
-                                        <?php foreach($modules_structure as $module_structure): ?>
-                                        <li><?= $module_structure['name_module'] ?></li>
+                                        <!-- Display the checked structure modules --> 
+                                        <?php foreach($modules as $module): ?>
+                                            <?php foreach($modules_structure as $module_structure): ?>
+                                                <?php if($module['name_module'] === $module_structure['name_module'] && $module_structure['isActive_modstructure']) :?>
+                                                    <li class="d-flex"><?= $module_structure['name_module'] ?> 
+                                                        <!-- toggle switch checked -->
+                                                        <div class="container toggleSwitch my-1">
+                                                            <input type="checkbox" name="box" class="box" checked>
+                                                            <div class="colorLayer"></div>
+                                                            <div class="switch"></div>
+                                                        </div>
+                                                    </li>
+                                                <?php endif ?>
+                                            <?php endforeach ?>
                                         <?php endforeach ?>
-                                    </ul>
-                                    <!-- toggle switch -->
-                                    <div class="d-block ml-3">
-                                        <?php foreach($modules_partner as $module_partner): ?>
-                                            <?php if($module_partner['isActive_modpartner']) : ?>
-                                                <div class="container toggleSwitch my-1">
-                                                    <input type="checkbox" name="box" class="box" checked>
-                                                    <div class="colorLayer"></div>
-                                                    <div class="switch"></div>
-                                                </div>
-                                            <?php else :?>
-                                                <div class="container toggleSwitch my-2">
-                                                    <input type="checkbox" name="box" class="box" >
-                                                    <div class="colorLayer"></div>
-                                                    <div class="switch"></div>
-                                                </div>
-                                            <?php endif ?>
-                                        <?php endforeach ?>
-                                        <?php foreach($modules_structure as $module_structure): ?>
-                                            <?php if($module_structure['isActive_modstructure']) : ?>
-                                                <div class="container toggleSwitch my-1">
-                                                    <input type="checkbox" name="box" class="box" checked>
-                                                    <div class="colorLayer"></div>
-                                                    <div class="switch"></div>
-                                                </div>
-                                            <?php else :?>
-                                                <div class="container toggleSwitch my-2">
-                                                    <input type="checkbox" name="box" class="box" >
-                                                    <div class="colorLayer"></div>
-                                                    <div class="switch"></div>
-                                                </div>
-                                            <?php endif ?>
-                                        <?php endforeach ?>
-                                    </div>
-
+                                    
+                                        <!-- TO DO : Display the not checked structure modules --> 
+                                        <!-- <?php foreach($modules_partner as $module_partner): ?>
+                                            <?php foreach($modules_structure as $module_structure): ?>
+                                                <?php if($module_structure['name_module'] !== $module_partner['name_module'] && $module_structure['isActive_modstructure'] == 0) : ?>
+                                                    <li class="d-flex"><?= $module_structure['name_module'] ?> 
+                                                      
+                                                        <div class="container toggleSwitch mb-2">
+                                                            <input type="checkbox" name="box" class="box" >
+                                                            <div class="colorLayer"></div>
+                                                            <div class="switch"></div>
+                                                        </div> 
+                                                    </li>
+                                                <?php endif ?>
+                                            <?php endforeach ?>
+                                        <?php endforeach ?> -->
+                                    </ul>   
                                 </div>
                             </div>
                         </article>

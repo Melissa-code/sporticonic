@@ -1,0 +1,35 @@
+<div class="d-block ml-3">
+                                        <!-- Display all the activated modules --> 
+                                       
+                                            <!-- <?php foreach($modules_partner as $module_partner): ?>
+                                               
+                                                    <?php if($module_partner['isActive_modpartner']) : ?>
+                                                        <div class="container toggleSwitch mb-2">
+                                                            <input type="checkbox" name="box" class="box" checked>
+                                                            <div class="colorLayer"></div>
+                                                            <div class="switch"></div>
+                                                        </div>
+
+                                                    <?php else :?>
+                                                        <div class="container toggleSwitch mb-2">
+                                                            <input type="checkbox" name="box" class="box" >
+                                                            <div class="colorLayer"></div>
+                                                            <div class="switch"></div>
+                                                        </div>
+                                                    <?php endif ?>
+                                            <?php endforeach ?>
+
+                                            <?php foreach($modules_structure as $module_structure): ?>
+                                            <?php foreach($modules as $module): ?>
+                                                <?php if($module_structure['isActive_modstructure'] && $module_structure['name_module'] === $module['name_module']) : ?>
+                                                    <div class="container toggleSwitch mb-2">
+                                                        <input type="checkbox" name="box" class="box" checked>
+                                                        <div class="colorLayer"></div>
+                                                        <div class="switch"></div>
+                                                    </div>
+
+                                           
+                                                <?php endif ?>
+                                            <?php endforeach ?>
+                                            <?php endforeach ?> -->
+                      

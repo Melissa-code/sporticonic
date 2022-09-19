@@ -212,8 +212,8 @@ input {
 }
 
 .card-container {
-    width: 40vh;
-    max-width: 40vh;
+    width: 50vh;
+    max-width: 50vh;
     border-radius: 10px;
 	background-color: #000000;
     opacity: 0.9;
@@ -224,12 +224,14 @@ input {
     box-shadow: 12px 12px 22px white
 }
 
+
 /* Toggle switch */ 
 .toggleSwitch {
     background-color:#000000;
     height: 20px;
     width: 40px;
     position: relative;
+    
 }
 
 .box {
@@ -355,9 +357,12 @@ footer a:hover {
         margin: 5vh 7vh 5vh 7vh;
     }
         
-    /* profil */ 
-    .card-container {
-        width: 10px;
+    /* Profil page */ 
+    .profil {
+        height: 90vh; 
+    }
+    .profil-structure {
+        height: 12vh;
     }
 
 
