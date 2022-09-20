@@ -104,6 +104,14 @@ class StructureController extends MainController {
         //print_r($structures);
     }
 
-  
+    
+    /**
+     * error function : get the parent function from the mother class MainController
+     *
+     * @param [type] $msg
+     */
+    public function errorPage($msg): void {
+        parent::errorPage($msg);
+    }
 
 }

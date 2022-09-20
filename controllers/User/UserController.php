@@ -19,19 +19,6 @@ class UserController extends MainController {
     }
 
 
-    /**
-     * login Partner function
-     *
-     */
-    public function loginPartner() :void {
-        $data_page = [
-            "page_description" => "Page de connexion du Partenaire franchisé",
-            "page_title" => "Connexion du Partenaire",
-            "view" => "views/User/loginPartnerView.php",
-            "template" => "views/common/template.php"
-        ];
-        $this->generatePage($data_page);
-    }
 
     /**
      * login Brand function

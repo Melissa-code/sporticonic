@@ -22,9 +22,9 @@ Class StructureManager extends MainManager {
      * Get the encrypted password function
      *
      * @param [type] $login
-     * @return string
+     *
      */
-    private function getPasswordDb(string $login): string {
+    private function getPasswordDb(string $login) {
         $req = "SELECT password_structure FROM Structures WHERE login_structure = :login_structure";
         $stmt = $this->getDb()->prepare($req); 
         $stmt->bindValue(":login_structure", $login, PDO::PARAM_STR); 
@@ -35,7 +35,7 @@ Class StructureManager extends MainManager {
     }
 
     /**
-     *  Compare the password from the form and the decrypted password from the DB function 
+     * Compare between the password from the form and the encrypt password from the DB function  
      *
      * @param [type] $login
      * @param [type] $password
@@ -48,7 +48,7 @@ Class StructureManager extends MainManager {
     }
 
     /**
-     *  Verify if the structure account is activated function
+     *  Check if the structure account is activated function
      *
      * @param [type] $login
      * @return boolean

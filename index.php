@@ -8,10 +8,12 @@ require_once ("controllers/class/Security.php");
 require_once("controllers/class/Toolbox.php"); 
 require_once("controllers/User/UserController.php");
 require_once("controllers/Structure/StructureController.php"); 
+require_once("controllers/Partner/PartnerController.php"); 
 
 
 $userController = new UserController();
 $structureController = new StructureController(); 
+$partnerController = new PartnerController(); 
 
 
 
@@ -24,8 +26,15 @@ try {
     }
 
     switch($page){
+        /**
+         * Home page route
+         */
         case "home" : $userController->home();
         break;
+
+        /**
+         * Structure login route
+         */
         case "loginStructure" : $structureController->loginStructure();
         break;
         case "loginStructureValidation" : 
@@ -39,10 +48,34 @@ try {
                 exit();
             }
         break;
-        case "loginPartner" : $userController->loginPartner();
+
+        /**
+         * Partner login route
+         */
+        case "loginPartner" : $partnerController->loginPartner();
         break;
+        case "loginPartnerValidation" : 
+            echo $_POST['login_partner']."-".$_POST['password_partner'];
+            if(!empty($_POST['login_partner']) && !empty($_POST['password_partner'])) {
+                $loginPartner = Security::secureHTML($_POST['login_partner']);
+                $passwordPartner = Security::secureHTML($_POST['password_partner']);
+                $partnerController->loginPartnerValidation($loginPartner, $passwordPartner);
+            } else {
+                Toolbox::addAlertMessage("Email ou mot de passe non renseigné", Toolbox::RED_COLOR);
+                header('location:'.URL.'loginPartner');
+                exit();
+            }
+        break;
+
+        /**
+         * Brand login route
+         */
         case "loginBrand" : $userController->loginBrand();
         break;
+
+        /**
+         * Structure profil & logout routes
+         */
         case "accountStructure" :
             if(!Security::isLoggedin()) {
                 Toolbox::addAlertMessage("Veuillez vous connecter", Toolbox::RED_COLOR);

@@ -13,7 +13,7 @@ class Security {
     }
 
     /**
-     * Check if the user is logged in function
+     * Check if the user is logged-in function
      *
      * @return boolean
      */
