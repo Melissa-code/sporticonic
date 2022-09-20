@@ -39,9 +39,13 @@
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="<?= URL ?>loginStructure">Structure</a>
                     </div>
+                    <!-- if the user is logged in -->
                     <?php else: ?>
                         <li class="nav-item">
                             <a class="nav-link menu-link" href="<?= URL ?>accountStructure/profil">Profil</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="<?= URL ?>accountStructure/logout">Déconnexion</a>
                         </li>
                     <?php endif ?>
                 </li>

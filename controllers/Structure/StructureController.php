@@ -89,6 +89,16 @@ class StructureController extends MainController {
         $this->generatePage($data_page);
     }
 
+    /**
+     * Logout structure function
+     *
+     */
+    public function logout() : void {
+        Toolbox::addAlertMessage("La déconnexion est effectuée", Toolbox::GREEN_COLOR); 
+        unset($_SESSION['profil']);
+        header("location:".URL."home");
+    }
+
 
     public function getAll() {
         $structures = $this->structureManager->getAllDb(); 

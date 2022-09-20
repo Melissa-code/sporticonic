@@ -47,6 +47,8 @@ try {
             switch($url[1]){
                 case "profil": $structureController->profil();
                 break;
+                case "logout": $structureController->logout();
+                break;
                 default : throw new Exception("La page n'existe pas.");
             }
         break;

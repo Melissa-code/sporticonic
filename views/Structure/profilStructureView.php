@@ -2,7 +2,7 @@
                             Main (login Structure)
 --------------------------------------------------------------------------------->
 <div class="row profil">
-   <div class="col-12">
+    <div class="col-12">
 
         <!-- title title section --> 
 
@@ -13,20 +13,18 @@
 
         <!-- Structure Profil section -->
 
-        <section id="profil">
-            <div class="row">
-
+            <section class="row" id="profil">
                 <!-- Structure profil title -->
-                <div class="col-12 pt-2 pb-md-3 profil-structure">
+                <div class="col-12 pt-2 pb-md-3 profil-structure d-flex justify-content-center">
                     <h2><?= $structure['name_structure'] ?></h2>
                 </div>
 
                 <!-- Structure profil Informations & Modules  --> 
-                <div class="col-12 d-flex justify-content-center align-items-center my-2 my-md-5">
+                <div class="col-12 d-flex justify-content-center my-2 my-md-5">
                     <div class="row">
                         <!-- Structure Information --> 
                         <article class="col-12 col-md-6">
-                            <div class="card card-container py-1 m-1" style="width: 20rem;">
+                            <div class="card card-container py-1 m-1" style="width: 22rem;">
                                 <div class="card-body">
                                     <h3 class="my-2 my-md-3">Informations</h3>
                                     <ul class="infoStructure">
@@ -41,7 +39,7 @@
 
                         <!-- Modules Structure --> 
                         <article class="col-12 col-md-6">
-                            <div class="card card-container py-1 m-1" style="width: 20rem;">
+                            <div class="card card-container py-1 m-1" style="width: 22rem;">
                                 <div class="card-body">
                                     <h3 class="my-2 my-md-3">Modules</h3>
                                     <ul class="infoStructure">
@@ -100,3 +98,7 @@
                 </div>
             </div>
         </section>
+
+     
+    </div>
+</div>
