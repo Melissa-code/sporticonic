@@ -4,7 +4,6 @@ require_once("models/Structure/StructureManager.php");
 require_once("models/ModuleManager.php"); 
 
 
-
 class StructureController extends MainController {
 
     private StructureManager $structureManager; 
@@ -90,7 +89,7 @@ class StructureController extends MainController {
     }
 
     /**
-     * Logout structure function
+     * Logout Structure function
      *
      */
     public function logout() : void {

@@ -4,7 +4,7 @@ session_start();
 define("URL", str_replace("index.php","",(isset($_SERVER['HTTPS'])? "https" : "http").
 "://".$_SERVER['HTTP_HOST'].$_SERVER["PHP_SELF"]));
 
-require_once ("controllers/class/Secutity.php"); 
+require_once ("controllers/class/Security.php"); 
 require_once("controllers/class/Toolbox.php"); 
 require_once("controllers/User/UserController.php");
 require_once("controllers/Structure/StructureController.php"); 
@@ -44,12 +44,18 @@ try {
         case "loginBrand" : $userController->loginBrand();
         break;
         case "accountStructure" :
-            switch($url[1]){
-                case "profil": $structureController->profil();
-                break;
-                case "logout": $structureController->logout();
-                break;
-                default : throw new Exception("La page n'existe pas.");
+            if(!Security::isLoggedin()) {
+                Toolbox::addAlertMessage("Veuillez vous connecter", Toolbox::RED_COLOR);
+                header("location:". URL ."loginStructure"); 
+                exit();
+            } else {
+                switch($url[1]){
+                    case "profil": $structureController->profil();
+                    break;
+                    case "logout": $structureController->logout();
+                    break;
+                    default : throw new Exception("La page n'existe pas.");
+                }
             }
         break;
         default : throw new Exception("La page n'existe pas.");
