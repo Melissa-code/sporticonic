@@ -23,17 +23,17 @@
 
                 <!-- Login Brand form --> 
                 <article class="col-12 d-flex justify-content-center">
-                    <form action="" method="post" class="form-container">
+                    <form action="loginBrandValidation" method="POST" class="form-container">
                         <div class="mb-2 mb-md-4">
                             <h3 class="animate__animated animate__heartBeat">La Marque</h3>
                         </div>
                         <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" class="form-control" id="email" placeholder="exemple@gmail.com" required>
+                            <label for="login_brand">Email</label>
+                            <input type="email" class="form-control" id="login_brand" name="login_brand" placeholder="exemple@gmail.com" required>
                         </div>
                         <div class="form-group mb-4">
-                            <label for="password">Mot de passe</label>
-                            <input type="password" class="form-control" id="password" placeholder="************" required>
+                            <label for="password_brand">Mot de passe</label>
+                            <input type="password" class="form-control" id="password_brand" name="password_brand" placeholder="************" required>
                         </div>
                         <!-- Login button -->
                         <div>

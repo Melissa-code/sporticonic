@@ -1,5 +1,5 @@
 <?php 
-require("models/MainManager.php"); 
+require_once("models/MainManager.php"); 
 
 
 Class StructureManager extends MainManager {
@@ -21,8 +21,8 @@ Class StructureManager extends MainManager {
     /**
      * Get the encrypted password function
      *
-     * @param [type] $login
-     *
+     * @param string $login
+     * 
      */
     private function getPasswordDb(string $login) {
         $req = "SELECT password_structure FROM Structures WHERE login_structure = :login_structure";
@@ -35,10 +35,10 @@ Class StructureManager extends MainManager {
     }
 
     /**
-     * Compare between the password from the form and the encrypt password from the DB function  
+     * Compare the form password with the encrypted DB password function
      *
-     * @param [type] $login
-     * @param [type] $password
+     * @param string $login
+     * @param string $password
      * @return boolean
      */
     public function isCombinationValid(string $login, string $password): bool{
@@ -48,9 +48,9 @@ Class StructureManager extends MainManager {
     }
 
     /**
-     *  Check if the structure account is activated function
+     * Check if the structure account is activated function
      *
-     * @param [type] $login
+     * @param string $login
      * @return boolean
      */
     public function isAccountActivated(string $login): bool {
@@ -66,10 +66,10 @@ Class StructureManager extends MainManager {
     /**
      * Get all the structure data function
      *
-     * @param [type] $login
+     * @param string $login
      * @return array
      */
-    public function getStructureInformation($login): array{
+    public function getStructureInformation(string $login): array{
         $req = "SELECT * FROM Structures WHERE login_structure = :login_structure";
         $stmt = $this->getDb()->prepare($req); 
         $stmt->bindValue(":login_structure", $login, PDO::PARAM_STR); 
@@ -82,10 +82,10 @@ Class StructureManager extends MainManager {
     /**
      * Get all the partner modules function
      *
-     * @param [type] $id_structure
+     * @param integer $id_structure
      * @return array
      */
-    public function getPartnerModules($id_structure): array {
+    public function getPartnerModules(int $id_structure): array {
         $req = "SELECT * FROM Modules_partners WHERE id_structure = :id_structure";
         $stmt = $this->getDb()->prepare($req); 
         $stmt->bindValue(":id_structure", $id_structure, PDO::PARAM_STR); 
@@ -96,12 +96,12 @@ Class StructureManager extends MainManager {
     }
 
     /**
-     * Get all the structure modules function
-     *
-     * @param [type] $id_structure
-     * @return array
-     */
-    public function getStructureModules($id_structure): array {
+    * Get all the structure modules function
+    *
+    * @param integer $id_structure
+    * @return array
+    */
+    public function getStructureModules(int $id_structure): array {
         $req = "SELECT * FROM Modules_structures WHERE id_structure = :id_structure";
         $stmt = $this->getDb()->prepare($req); 
         $stmt->bindValue(":id_structure", $id_structure, PDO::PARAM_STR); 

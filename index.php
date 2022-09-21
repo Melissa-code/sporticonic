@@ -9,11 +9,13 @@ require_once("controllers/class/Toolbox.php");
 require_once("controllers/User/UserController.php");
 require_once("controllers/Structure/StructureController.php"); 
 require_once("controllers/Partner/PartnerController.php"); 
+require_once("controllers/Brand/BrandController.php"); 
 
 
 $userController = new UserController();
 $structureController = new StructureController(); 
 $partnerController = new PartnerController(); 
+$brandController = new BrandController(); 
 
 
 
@@ -55,7 +57,6 @@ try {
         case "loginPartner" : $partnerController->loginPartner();
         break;
         case "loginPartnerValidation" : 
-            echo $_POST['login_partner']."-".$_POST['password_partner'];
             if(!empty($_POST['login_partner']) && !empty($_POST['password_partner'])) {
                 $loginPartner = Security::secureHTML($_POST['login_partner']);
                 $passwordPartner = Security::secureHTML($_POST['password_partner']);
@@ -70,14 +71,26 @@ try {
         /**
          * Brand login route
          */
-        case "loginBrand" : $userController->loginBrand();
+        case "loginBrand" : $brandController->loginBrand();
+        break;
+        case "loginBrandValidation" : 
+            if(!empty($_POST['login_brand']) && !empty($_POST['password_brand'])) {
+                $loginBrand = Security::secureHTML($_POST['login_brand']);
+                $passwordBrand = Security::secureHTML($_POST['password_brand']);
+                $brandController->loginBrandValidation($loginBrand, $passwordBrand);
+            } else {
+                Toolbox::addAlertMessage("Email ou mot de passe non renseigné", Toolbox::RED_COLOR);
+                header('location:'.URL.'loginBrand');
+                exit();
+            }
         break;
 
+        
         /**
          * Structure profil & logout routes
          */
         case "accountStructure" :
-            if(!Security::isLoggedin()) {
+            if(!Security::isLoggedinStructure()) {
                 Toolbox::addAlertMessage("Veuillez vous connecter", Toolbox::RED_COLOR);
                 header("location:". URL ."loginStructure"); 
                 exit();
@@ -91,6 +104,26 @@ try {
                 }
             }
         break;
+
+        /**
+         * Partner profil & logout routes
+         */
+        case "accountPartner" :
+            if(!Security::isLoggedinPartnerBrand()) {
+                Toolbox::addAlertMessage("Veuillez vous connecter", Toolbox::RED_COLOR);
+                header("location:". URL ."loginPartner"); 
+                exit();
+            } else {
+                switch($url[1]){
+                    case "profil": $partnerController->profil();
+                    break;
+                    case "logout": $partnerController->logout();
+                    break;
+                    default : throw new Exception("La page n'existe pas.");
+                }
+            }
+        break;
+
         default : throw new Exception("La page n'existe pas.");
     }
 

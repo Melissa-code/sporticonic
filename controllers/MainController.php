@@ -6,9 +6,10 @@ abstract class MainController{
 
     /**
      * Generate page 
-     * 
+     *
+     * @param array $data
      */
-    protected function generatePage($data): void {
+    protected function generatePage(array $data): void {
         extract($data);
         ob_start();
         require_once($view);
@@ -19,9 +20,9 @@ abstract class MainController{
     /**
      * Errors page
      *
-     * @param [type] $msg
+     * @param string $msg
      */
-    protected function errorPage($msg): void {
+    protected function errorPage(string $msg): void {
         $data_page = [
             "page_description" => "Page permettant de gérer les erreurs",
             "page_title" => "Page d'erreur",

@@ -27,13 +27,14 @@ class PartnerController extends MainController {
         $this->generatePage($data_page);
     }
 
+
     /**
      * Partner login (validation) function
      *
-     * @param [type] $loginPartner
-     * @param [type] $passwordPartner
+     * @param string $loginPartner
+     * @param string $passwordPartner
      */
-    public function loginPartnerValidation($loginPartner, $passwordPartner): void {
+    public function loginPartnerValidation(string $loginPartner, string $passwordPartner): void {
         if($this->partnerManager->isCombinationValid($loginPartner, $passwordPartner)) {
             if($this->partnerManager->isAccountActivated($loginPartner)) {
                 Toolbox::addAlertMessage("Ravi de vous retrouver", Toolbox::GREEN_COLOR); 
@@ -55,19 +56,47 @@ class PartnerController extends MainController {
         }
     }
 
+    /**
+     * profil Partner function
+     *
+     */
+    public function profil(): void {
 
-    public function getAll() {
-        $structures = $this->structureManager->getAllDb(); 
-        //print_r($structures);
+        $partner = $this->partnerManager->getPartnerInformation($_SESSION['profil_partner']['login_partner']);
+        $id_partner = $partner['id_partner'];
+
+        /**
+         *  TO DO : send an email to the structure 
+         */
+        //$_SESSION['profil_partner']['role'] = $partner['role_partner'];
+
+        $data_page = [
+            "page_description" => "Page de profil du Partenaire",
+            "page_title" => "Informations et modules du Partenaire",
+            "partner" => $partner,
+            "view" => "views/Partner/profilPartnerView.php",
+            "template" => "views/common/template.php"
+        ];
+        $this->generatePage($data_page);
+    }
+
+    /**
+     * Logout Partner function
+     *
+     */
+    public function logout() : void {
+        Toolbox::addAlertMessage("La déconnexion est effectuée", Toolbox::GREEN_COLOR); 
+        unset($_SESSION['profil_partner']);
+        header("location:".URL."home");
     }
 
 
     /**
-     * error function : get the parent function from the mother class MainController
+     * Error function : get the parent function from the mother class MainController
      *
-     * @param [type] $msg
+     * @param string $msg
      */
-    public function errorPage($msg): void {
+    public function errorPage(string $msg): void {
         parent::errorPage($msg);
     }
 

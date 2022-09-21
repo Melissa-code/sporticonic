@@ -21,7 +21,7 @@ Class PartnerManager extends Model {
     /**
      * Get the encrypted password function
      *
-     * @param [type] $loginPartner 
+     * @param string $loginPartner
      *
      */
     private function getPasswordDb(string $loginPartner){
@@ -35,13 +35,13 @@ Class PartnerManager extends Model {
     }
 
     /**
-     * Compare between the password from the form and the encrypt password from the DB function 
+     * Compare the form password with the encrypted DB password function 
      *
-     * @param [type] $loginPartner
-     * @param [type] $passwordPartner
+     * @param string $loginPartner
+     * @param string $passwordPartner
      * @return boolean
      */
-    public function isCombinationValid(string $loginPartner, string $passwordPartner): bool{
+    public function isCombinationValid(string $loginPartner, string $passwordPartner): bool {
         $passwordDb = $this->getPasswordDb($loginPartner); 
         return password_verify($passwordPartner, $passwordDb);
     }
@@ -49,7 +49,7 @@ Class PartnerManager extends Model {
     /**
      * Check if the Partner account is activated function
      *
-     * @param [type] $loginPartner
+     * @param string $loginPartner
      * @return boolean
      */
     public function isAccountActivated(string $loginPartner): bool {
@@ -60,6 +60,22 @@ Class PartnerManager extends Model {
         $result = $stmt->fetch(PDO::FETCH_ASSOC); 
         $stmt->closeCursor(); 
         return ((int)$result['isActive_partner'] === 1) ? true : false; 
+    }
+
+    /**
+     * Get all the partner data function
+     *
+     * @param string $loginPartner
+     * @return array
+     */
+    public function getPartnerInformation(string $loginPartner): array {
+        $req = "SELECT * FROM Partners WHERE login_partner = :login_partner";
+        $stmt = $this->getDb()->prepare($req); 
+        $stmt->bindValue(":login_partner", $loginPartner, PDO::PARAM_STR); 
+        $stmt->execute();
+        $infos_partner = $stmt->fetch(PDO::FETCH_ASSOC); 
+        $stmt->closeCursor(); 
+        return $infos_partner; 
     }
 
 

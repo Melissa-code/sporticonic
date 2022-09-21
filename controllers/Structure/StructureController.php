@@ -33,8 +33,10 @@ class StructureController extends MainController {
     /**
      * login Structure (validation) function
      *
+     * @param string $login
+     * @param string $password
      */
-    public function loginStructureValidation($login, $password): void {
+    public function loginStructureValidation(string $login, string $password): void {
         if($this->structureManager->isCombinationValid($login, $password)) {
             if($this->structureManager->isAccountActivated($login)){
                 Toolbox::addAlertMessage("Ravi de vous retrouver", Toolbox::GREEN_COLOR); 
@@ -68,12 +70,10 @@ class StructureController extends MainController {
         $modules_structure = $this->structureManager->getStructureModules($id_structure);
         $modules = $this->moduleManager->getAllDb(); 
 
-
         /**
          *  TO DO : send an email to the structure 
          */
         $_SESSION['profil']['role'] = $structure['role_structure'];
-
 
         $data_page = [
             "page_description" => "Page de profil de la Structure",
@@ -98,19 +98,13 @@ class StructureController extends MainController {
         header("location:".URL."home");
     }
 
-
-    public function getAll() {
-        $structures = $this->structureManager->getAllDb(); 
-        //print_r($structures);
-    }
-
     
     /**
-     * error function : get the parent function from the mother class MainController
+     * Error function : get the parent function from the mother class MainController
      *
-     * @param [type] $msg
+     * @param string $msg
      */
-    public function errorPage($msg): void {
+    public function errorPage(string $msg): void {
         parent::errorPage($msg);
     }
 

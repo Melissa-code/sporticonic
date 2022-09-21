@@ -3,7 +3,7 @@
 class Security {
 
    /**
-    * Check the user typing function
+    * Check the User typing function
     *
     * @param string $typing
     * @return string
@@ -13,12 +13,26 @@ class Security {
     }
 
     /**
-     * Check if the user is logged-in function
+     * Check if the Structure is logged-in function
      *
      * @return boolean
      */
-    public static function isLoggedin(): bool {
-        return (!empty($_SESSION['profiil'])); 
+    public static function isLoggedinStructure(): bool {
+        return (!empty($_SESSION['profil'])); 
     }
+
+    /**
+     * Check if the Partner is logged-in function
+     *
+     * @return boolean
+     */
+    public static function isLoggedinPartnerBrand(): bool {
+        if(!empty($_SESSION['profil_partner']) || !empty($_SESSION['profil_brand'])){
+            return true;
+        }
+        return false; 
+    }
+
+   
 
 }
