@@ -1,0 +1,77 @@
+.login {
+    height: 70vh; 
+    min-width: 100%;
+    min-height: 100%;
+	background-image: url('../Assets/images/photos/room.png');
+	background-size: cover;
+	background-position: center;
+    background-repeat: no-repeat;
+}
+
+.login-structure, .login-partner, .login-brand, .profil-structure {
+    height: 11vh;
+    background-color:  #000000; 
+}
+
+h3 {
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    font-weight: 700;
+    color:#89FC00;
+}
+
+.form-container {
+    max-width: 50vh;
+    border-radius: 10px;
+	background-color: #000000;
+    opacity: 0.9;
+	padding: 4vh 8vh 3vh 8vh;
+	margin: 7vh auto 7vh auto;
+    color:#F7F5F3;
+    -webkit-box-shadow: -1px 1px 30px -11px white;
+    box-shadow: 12px 12px 22px white
+}
+
+input {
+    border:none;
+    outline:none;
+}
+
+.btn-login {
+    background-color: #89FC00;
+}
+
+.btn-login:hover {
+    background-color:  #2A2829;
+    color: white;
+}
+
+.createAccountLink {
+    font-size: 14px;
+}
+
+
+
+/*****************************************************************
+                    Media queries 
+******************************************************************/
+
+
+@media screen and (min-width: 280px) and (max-width: 1200px) {
+    h3 {
+        font-size: 1.5rem;
+    }
+    .form-container {
+        padding: 3vh 4vh;
+        margin: 5vh 7vh 5vh 7vh;
+    }
+}
+
+
+@media screen and (min-width: 1020px) and (max-width: 1200px) {
+    .login {
+        height: 90vh;
+    }
+  
+}
+  

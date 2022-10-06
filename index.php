@@ -18,7 +18,6 @@ $partnerController = new PartnerController();
 $brandController = new BrandController(); 
 
 
-
 try {
     if(empty($_GET['page'])){
         $page = "home";
@@ -90,7 +89,7 @@ try {
          * Structure profil & logout routes
          */
         case "accountStructure" :
-            if(!Security::isLoggedinStructure()) {
+            if(!Security::isLoggedin()) {
                 Toolbox::addAlertMessage("Veuillez vous connecter", Toolbox::RED_COLOR);
                 header("location:". URL ."loginStructure"); 
                 exit();
@@ -109,7 +108,7 @@ try {
          * Partner profil & logout routes
          */
         case "accountPartner" :
-            if(!Security::isLoggedinPartnerBrand()) {
+            if(!Security::isLoggedin()) {
                 Toolbox::addAlertMessage("Veuillez vous connecter", Toolbox::RED_COLOR);
                 header("location:". URL ."loginPartner"); 
                 exit();
@@ -123,6 +122,25 @@ try {
                 }
             }
         break;
+
+        /**
+         * Brand profil & logout routes
+         */
+        // case "accountBrand" :
+        //     if(!Security::isLoggedin()) {
+        //         Toolbox::addAlertMessage("Veuillez vous connecter", Toolbox::RED_COLOR);
+        //         header("location:". URL ."loginBrand"); 
+        //         exit();
+        //     } else {
+        //         switch($url[1]){
+        //             case "profil": $brandController->profil();
+        //             break;
+        //             case "logout": $brandController->logout();
+        //             break;
+        //             default : throw new Exception("La page n'existe pas.");
+        //         }
+        //     }
+        // break;
 
         default : throw new Exception("La page n'existe pas.");
     }

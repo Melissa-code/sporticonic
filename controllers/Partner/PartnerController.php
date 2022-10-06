@@ -21,6 +21,7 @@ class PartnerController extends MainController {
         $data_page = [
             "page_description" => "Page de connexion du Partenaire franchisé",
             "page_title" => "Connexion du Partenaire franchisé",
+            "page_css" => "login.css",
             "view" => "views/Partner/loginPartnerView.php",
             "template" => "views/common/template.php"
         ];
@@ -73,6 +74,7 @@ class PartnerController extends MainController {
         $data_page = [
             "page_description" => "Page de profil du Partenaire",
             "page_title" => "Informations et modules du Partenaire",
+            "page_css" => "profil.css",
             "partner" => $partner,
             "view" => "views/Partner/profilPartnerView.php",
             "template" => "views/common/template.php"

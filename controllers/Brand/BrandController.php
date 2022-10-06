@@ -22,6 +22,7 @@ class BrandController extends MainController {
         $data_page = [
             "page_description" => "Page de connexion de l'équipe de la Marque",
             "page_title" => "Connexion de la Marque",
+            "page_css" => "login.css",
             "view" => "views/Brand/loginBrandView.php",
             "template" => "views/common/template.php"
         ];
@@ -42,7 +43,8 @@ class BrandController extends MainController {
                 $_SESSION['profil_brand'] = [
                     'login_brand' => $loginBrand
                 ];
-                header("location:".URL."accountPartner/profil");
+                //header("location:".URL."accountPartner/profil");
+                header("location:".URL."accountBrand/profil");
                 exit();
         } else {
             Toolbox::addAlertMessage("Combinaison Email-Mot de passe non valide", Toolbox::RED_COLOR);

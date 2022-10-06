@@ -24,6 +24,7 @@ class StructureController extends MainController {
         $data_page = [
             "page_description" => "Page de connexion de la Structure",
             "page_title" => "Connexion de la Structure",
+            "page_css" => "login.css",
             "view" => "views/Structure/loginStructureView.php",
             "template" => "views/common/template.php"
         ];
@@ -78,6 +79,7 @@ class StructureController extends MainController {
         $data_page = [
             "page_description" => "Page de profil de la Structure",
             "page_title" => "Informations et modules de la Structure",
+            "page_css" => "profil.css",
             "structure" => $structure,
             "modules_partner" => $modules_partner,
             "modules_structure" => $modules_structure, 

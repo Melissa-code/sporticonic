@@ -14,10 +14,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- CSS Bootstrap v 4.6 -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <!-- Bootswatch v 4 Cyborg theme -->
+    <link href="https://bootswatch.com/4/cyborg/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
-    <link rel="stylesheet" type="text/css" href="<?= URL ?>/style.css">
+    <link href="<?= URL ?>public/CSS/main.css" rel="stylesheet">
+    <?php if(!empty($page_css)) : ?>
+        <link href="<?= URL ?>public/CSS/<?=$page_css?>" rel="stylesheet">
+    <?php endif; ?> 
 </head>
-
 
 <body>
     <!-- Header -->
@@ -29,18 +33,17 @@
             <?php 
                 if(!empty($_SESSION['alert'])) {
 
-                    echo "<div class='row'>";
-                        echo "<div class='col-12 d-flex justify-content-center w-75 mt-2'>";
-
-                            foreach($_SESSION['alert'] as $alert){
-                                echo "<div class='alert ". $alert['type'] ."' role='alert'>
-                                    ".$alert['message']."
-                                </div>";
-                            }
-                            unset($_SESSION['alert']);
-
+                    foreach($_SESSION['alert'] as $alert){
+                        
+                        echo "<div class='row'>";
+                            echo "<div class='col-12 d-flex justify-content-center w-75'>";
+                                echo "<div class='alert alert-dismissible mt-2 ". $alert['type'] ."' role='alert'>
+                                    ".$alert['message']."  <button type='button' class='close' data-dismiss='alert'>&times;</button>
+                                    </div>";
+                            echo "</div>";
                         echo "</div>";
-                    echo "</div>";
+                    }
+                    unset($_SESSION['alert']);
                 }
             ?>
             <?= $page_content; ?>

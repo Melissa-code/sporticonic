@@ -13,26 +13,17 @@ class Security {
     }
 
     /**
-     * Check if the Structure is logged-in function
+     * Check if the Structure/Partner/Brand is logged-in function
      *
      * @return boolean
      */
-    public static function isLoggedinStructure(): bool {
-        return (!empty($_SESSION['profil'])); 
-    }
-
-    /**
-     * Check if the Partner is logged-in function
-     *
-     * @return boolean
-     */
-    public static function isLoggedinPartnerBrand(): bool {
-        if(!empty($_SESSION['profil_partner']) || !empty($_SESSION['profil_brand'])){
+    public static function isLoggedin(): bool {
+        if(!empty($_SESSION['profil']) || !empty($_SESSION['profil_partner']) || !empty($_SESSION['profil_brand'])){
             return true;
         }
         return false; 
     }
 
-   
+
 
 }

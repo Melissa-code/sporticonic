@@ -1,0 +1,108 @@
+/* Slogan section */ 
+
+.img-slogan {
+    background: url('../Assets/images/photos/dumbbell-man.png');
+    height: 70vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center;
+    padding: 250px 0 200px 0;
+}
+
+.slogan {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2vw; 
+}
+
+.chevron-icon {
+    color: #000000;
+    max-width: 2vw;
+    max-height: auto;
+}
+
+.separator-line {
+    background-color: #E0E0DB;
+    height: 1px;
+}
+
+
+/* Statistics section  */ 
+
+.statistics-card {
+    background-color: #89FC00;
+    border: none;
+    width: 20rem;
+}
+
+.card-title {
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #000000;
+}
+
+.card-icons {
+    height: 15vh;
+}
+
+
+/* Courses section */ 
+
+#courses {
+    background-color: #2A2829;
+}
+
+.title-carousel {
+    color:#89FC00;
+}
+
+.control-btn {
+    width: 50px;
+    height: 50px;
+    color:white;
+    background-color: #000000;
+}
+
+
+/* Become a Partner section */ 
+
+.partner-card {
+    background-color: #89FC00;
+    border:none;
+    width: 26rem;
+
+}
+
+.btn-partner {
+    background-color: #000000;
+    width: 100px;
+}
+
+
+
+@media screen and (min-width: 280px) and (max-width: 1200px) {
+    h2 {
+        font-size: 2rem;
+    }
+    .img-slogan {
+        display: none;
+    }
+    .card-title  {
+        font-size: 1.5rem;
+    }
+    .statistics-card, .partner-card {
+        width: 19rem;
+    }
+    .card-icons {
+        height: 12vh;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1200px) {
+    .title-carousel {
+        font-size: 1.5rem;
+    }
+
+}

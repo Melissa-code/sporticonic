@@ -3,22 +3,20 @@ require_once("controllers/MainController.php");
 
 class UserController extends MainController {
 
-
     /**
      * home function 
      *
      */
     public function home(): void { 
         $data_page = [
-            "page_description" => "Description de la page d'accueil",
+            "page_description" => "Page d'accueil",
             "page_title" => "Sport Iconic",
+            "page_css" => "home.css",
             "view" => "views/User/homeView.php",
             "template" => "views/common/template.php"
         ];
         $this->generatePage($data_page);
     }
-
-
 
     /**
      * login Brand function

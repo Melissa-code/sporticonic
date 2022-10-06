@@ -1,0 +1,93 @@
+*, ::before, ::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Palanquin', sans-serif;
+    font-size: 18px;
+    color: white;
+    background-color: #000000;
+}
+
+h1 {
+    display: none;
+}
+
+h2 {
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 3rem;
+}
+
+
+/************************************************************
+                    Header 
+*********************************************************** */
+
+/* Navbar */ 
+.logo {
+    width: 20rem;
+}
+#main-nav {
+    background-color: #89FC00;
+    height: 15vh;
+}
+
+.dropdown-custom {
+    background-color: #89FC00;
+}
+
+.input-navbar {
+    border: none;
+}
+
+
+/************************************************************
+                    Footer 
+*********************************************************** */
+
+/* Footer  */ 
+
+.footer-custom {
+    background-color: #E0E0DB;
+    height: 15vh;
+    color: #000000;
+}
+
+footer a {
+    color: #000000;
+}
+
+footer a:hover {
+    color: #89FC00;
+    text-decoration: none;
+}
+
+
+/************************************************************
+                    Media queries 
+************************************************************ */
+
+
+@media screen and (min-width: 280px) and (max-width: 1200px) {
+    .logo {
+        width: 10rem;
+    }
+    .menu-link {
+        color: white!important;
+    }
+}
+
+
+@media screen and (min-width: 768px) and (max-width: 1200px) {
+    .logo {
+        width: 20rem;
+    }
+    .menu-link {
+        color: #000000!important;
+    }
+}
