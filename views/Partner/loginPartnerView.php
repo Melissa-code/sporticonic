@@ -5,7 +5,6 @@
    <div class="col-12">
 
         <!-- Page title section --> 
-
         <section>
             <h1>Connexion du Partenaire</h1>
         </section>

@@ -8,7 +8,7 @@
     background-repeat: no-repeat;
 }
 
-.login-structure, .login-partner, .login-brand, .profil-structure {
+.login-structure, .login-partner, .login-brand {
     height: 11vh;
     background-color:  #000000; 
 }

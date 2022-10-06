@@ -8,6 +8,11 @@
     background-repeat: no-repeat;
 }
 
+.profil-title {
+    height: 11vh;
+    background-color:  #000000; 
+}
+
 #structure {
     height: 60vh;
 }
@@ -92,6 +97,44 @@ ul {
     border-radius: 10px;
 }
 
+
+/* **************************************************************
+                    Partner profil 
+******************************************************************/
+
+.partnerInfo-bg {
+    height: 70vh; 
+    min-width: 100%;
+    min-height: 100%;
+	background-image: url('../Assets/images/photos/man-dumbells3.png');
+	background-size: cover;
+	background-position: center;
+    background-repeat: no-repeat;
+}
+
+.card-struct {
+    border-radius: 10px;
+	background-color: #000000;
+    opacity: 0.9;
+    border: 1px solid white;
+    color:#F7F5F3;
+    -webkit-box-shadow: -1px 1px 30px -11px white;
+    box-shadow: 12px 12px 22px white
+}
+
+.customSwitch {
+    background-color: #89FC00;
+}
+
+/** Pagination **/
+
+.page-link {
+    background-color: #000000;
+    border: 1px solid  #2A2829;
+}
+.page-link:hover {
+    background-color: #89FC00;
+}
 
 
 /*****************************************************************
